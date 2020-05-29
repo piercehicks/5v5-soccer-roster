@@ -11,14 +11,22 @@ function PlayerTable(props) {
                     <th>Assists</th>
                 </thead>
                 <tbody>
-                    <td>Name</td>
-                    <td>Position</td>
-                    <td>Goals</td>
-                    <td>Assists</td>
-                    <td>
-                        <button>Edit</button>
-                        <button>Delete</button>
-                    </td>
+                    {
+                        props.players.length > 0 ? (
+                            props.players.map( player => (
+                            <tr key={player.id}>
+                                <td>{player.name}</td>
+                                <td>{player.position}</td>
+                                <td>{player.goals}</td>
+                                <td>{player.assists}</td>
+                            </tr>
+                        ))
+                            ) : (
+                                <tr>
+                                    <td colSpan={4}>No players listed</td>
+                                </tr>
+                                )
+                    }
                 </tbody>
             </table>
         </div>
