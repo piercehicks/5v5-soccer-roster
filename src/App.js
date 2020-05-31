@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PlayerTable from './components/PlayerTable';
-import AddPlayer from './components/AddPlayer';
+import AddPlayerForm from './components/AddPlayerForm';
 import './App.css';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <h1>5v5 Roster Maker</h1>
-      <AddPlayer 
+      <AddPlayerForm 
         addPlayer={addPlayer}
       />
       <PlayerTable 
