@@ -21,6 +21,24 @@ function App() {
     setPlayers(players.filter(player => player.id !== id))
   }
 
+  /*Edit*/
+  const [editing, setEditing] = useState(false)
+  const initialFormState = { id: null, name: '', username: ''}
+  const [currentPlayer, setCurrentPlayer] = useState(initialFormState)
+
+  const editRow = player => {
+    setEditing(true)
+
+    setCurrentPlayer({
+      id: player.id, 
+      name: player.name, 
+      position: player.position,
+      goals: player.goals,
+      assists: player.assists
+    })
+  }
+
+
   return (
     <div className="App">
       <h1>5v5 Roster Maker</h1>
@@ -30,6 +48,7 @@ function App() {
       <PlayerTable 
         players={players}
         deletePlayer={deletePlayer}
+        editRow={editRow}
       />
     </div>
   );

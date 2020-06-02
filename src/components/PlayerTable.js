@@ -25,6 +25,11 @@ function PlayerTable(props) {
                                 >
                                     Delete
                                 </button>
+                                <button
+                                    onClick={()=> props.editRow(player)}
+                                >
+                                    Edit
+                                </button>
                             </tr>
                         ))
                             ) : (
