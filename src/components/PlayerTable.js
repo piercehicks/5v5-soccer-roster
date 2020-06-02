@@ -14,11 +14,17 @@ function PlayerTable(props) {
                     {
                         props.players.length > 0 ? (
                             props.players.map( player => (
+                                
                             <tr key={player.id}>
                                 <td>{player.name}</td>
                                 <td>{player.position}</td>
                                 <td>{player.goals}</td>
                                 <td>{player.assists}</td>
+                                <button
+                                    onClick={()=> props.deletePlayer(player.id)}
+                                >
+                                    Delete
+                                </button>
                             </tr>
                         ))
                             ) : (
